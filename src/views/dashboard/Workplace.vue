@@ -35,8 +35,7 @@
             style="margin-bottom: 24px;"
             :bordered="false"
             title="进行中的项目"
-            :body-style="{ padding: 0 }"
-          >
+            :body-style="{ padding: 0 }">
             <a slot="extra">全部项目</a>
             <div>
               <a-card-grid class="project-card-grid" :key="i" v-for="(item, i) in projects">
@@ -59,16 +58,14 @@
             </div>
           </a-card>
 
-          <a-card :loading="loading" title="动态" :bordered="false">
+          <a-card :loading="loading" title="Top" :bordered="true">
             <a-list>
-              <a-list-item :key="index" v-for="(item, index) in activities">
+              <a-list-item :key="index" v-for="(item, index) in activities"  size="large">
                 <a-list-item-meta>
                   <a-avatar slot="avatar" size="small" :src="item.user.avatar" />
                   <div slot="title">
-                    <span>{{ item.user.nickname }}</span
-                    >&nbsp; 在&nbsp;<a href="#">{{ item.project.name }}</a
-                    >&nbsp; <span>{{ item.project.action }}</span
-                    >&nbsp;
+                    <span>{{ item.user.nickname }}</span>&nbsp; 在&nbsp;<a href="#">{{ item.project.name }}</a>&nbsp;
+                     <span>{{ item.project.action }}</span>&nbsp;
                     <a href="#">{{ item.project.event }}</a>
                   </div>
                   <div slot="description">{{ item.time }}</div>
